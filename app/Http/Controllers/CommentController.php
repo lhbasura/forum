@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Comment;
+use App\Http\Requests\CommentRequest;
+use Illuminate\Http\Request;
+
+class CommentController extends Controller
+{
+    protected $fillable=['body','discussion_id','user_id'];
+    //
+    public function store(CommentRequest $request)
+    {
+
+        $comment=Comment::create(array_merge($request->all(),['user_id'=>\Auth::user()->id]));
+
+        return redirect()->action('PostController@show',['id'=>$request->get('discussion_id')]);
+    }
+}
