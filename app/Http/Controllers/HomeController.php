@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $discussions=\Auth::user()->discussions;
+        return view('home',compact('discussions'));
     }
 }
