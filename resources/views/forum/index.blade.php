@@ -22,14 +22,16 @@
                              class="mr-2 rounded"
                              src="{{$user->avatar}}"
                              data-holder-rendered="true" style="width: 64px; height: 64px;">
-                        <p class="media-body pb-4 mb-0 big lh-125 border-bottom border-gray">
-                            <a href="/discussion/{{$discussion->id}}"><strong>{{$discussion->title}}</strong></a>
-
-                            <strong class="d-block  text-gray-dark">{{$user->name}}</strong>
-                        <div>
-                            <a>{{count($discussion->comments)}}</a>
+                        <div class="media-body pb-4 mb-0 big lh-125 border-bottom border-gray">
+                            <div class="col-md-10 d-inline-block">
+                                <a href="/discussion/{{$discussion->id}}"><strong>{{$discussion->title}}</strong></a>
+                                <strong class="d-block  text-gray-dark">{{$user->name}}</strong>
+                            </div>
+                            <div class="d-inline-block col-md-1 text-center">
+                                <a class="text-dark">{{count($discussion->comments)}}</a>
+                                <div class="">回复</div>
+                            </div>
                         </div>
-                        </p>
                     </div>
                 @endforeach
             </div>
