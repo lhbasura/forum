@@ -15,6 +15,7 @@
 Route::get('/','PostController@index')->name('index');
 Route::resource('/discussion','PostController');
 Route::resource('/comment','CommentController');
+Route::resource('/user','UserController');
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes(['verify' => true]);
 

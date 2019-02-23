@@ -89,9 +89,12 @@
 
                     @endguest
                 </ul>
-                <img src="{{Auth::user()->avatar}}" class="rounded"
-                     style="width: 64px;height: 64px"/>
-
+                @auth
+                    <a href="{{url('/home')}}">
+                        <img src="{{Auth::user()->avatar}}" class="rounded"
+                             style="width: 64px;height: 64px"/>
+                    </a>
+                @endauth
             </div>
 
         </div>

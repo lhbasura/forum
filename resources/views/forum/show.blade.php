@@ -1,4 +1,9 @@
 @extends('layouts.app')
+<!--如果在页面其他位置引入过jquery，此处引用可以删除-->
+<script src="{{asset('vendor/markdown/js/jquery.min.js')}}"></script>
+
+<link rel="stylesheet" href="{{asset('vendor/markdown/css/editormd.min.css')}}" />
+<script src="{{asset('vendor/markdown/js/editormd.min.js')}}"></script>
 @section('content')
     <div class="jumbotron">
         <div class="container">
@@ -24,10 +29,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" role="main">
-                <div class="blog-post">
+                <article class="markdown-body">
                     {!! $html !!}
-
-                </div>
+                </article>
                 <hr>
                 <h5>评论：</h5>
                 @foreach($discussion->comments as $comment)

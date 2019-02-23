@@ -162,6 +162,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+
+
+
         /*
          * Package Service Providers...
          */
@@ -176,6 +179,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         //edit
         Chenhua\MarkdownEditor\MarkdownEditorServiceProvider::class,
+        //图片工具类
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -228,6 +233,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'MarkdownEditor' => Chenhua\MarkdownEditor\Facades\MarkdownEditor::class,
+
+        'Image' => Intervention\Image\Facades\Image::class
 
 
 
