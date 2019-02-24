@@ -3,10 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="dns-prefetch" href="https://github.githubassets.com">
-    <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
-    <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
-    <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
-    <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+
     <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
     <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -40,8 +37,6 @@
     <meta property="profile:username" content="lhbasura"/>
 
     <link rel="assets" href="https://github.githubassets.com/">
-    <link rel="web-socket"
-          href="wss://live.github.com/_sockets/VjI6Mzc1OTk3MDM5OjY3ZWY3OWVkYTBkNWQwMjFjNGRlYjc0ZWFjNDg0NTVjMTZmMmE5NDljNjk0NDJlMGIyZjE1ZjE2N2RmMTJkNWE=--a9225a6a078c6a3befdd6e2410b421395222712f">
     <meta name="pjax-timeout" content="1000">
     <link rel="sudo-modal" href="/sessions/sudo_modal">
     <meta name="request-id" content="CF71:7627:124EC30:19BCD31:5C716AA1" data-pjax-transient>
@@ -781,9 +776,9 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        width:230px;
-                        height:230px;
-                        text-align:center;
+                        width: 230px;
+                        height: 230px;
+                        text-align: center;
                         background: rgba(101, 101, 101, 0.6);
                         color: #ffffff;
                         font-size: 150px;
@@ -793,9 +788,9 @@
                     a.u-photo:hover .mask {
                         opacity: 1;
                     }
-                    .pinned-item-list-item
-                    {
-                        width:355px;
+
+                    .pinned-item-list-item {
+                        width: 355px;
                     }
                 </style>
                 <a class="u-photo d-block tooltipped tooltipped-s" aria-label="Change your avatar"
@@ -804,9 +799,9 @@
                    href="/account"><img alt="" width="230" height="230"
                                         class="avatar width-full avatar-before-user-status"
                                         src="{{Auth::user()->avatar}}"/>
-                        <div class="mask width-full"   >
-                            <i class="fa fa-plus m-auto"></i>
-                        </div>
+                    <div class="mask width-full">
+                        <i class="fa fa-plus m-auto"></i>
+                    </div>
                 </a>
 
 
@@ -1007,26 +1002,15 @@
 
                 <div class="vcard-names-container py-3 js-sticky js-user-profile-sticky-fields">
                     <h1 class="vcard-names">
-                        <span class="p-name vcard-fullname d-block overflow-hidden" itemprop="name">LiuHongbo</span>
-                        <span class="p-nickname vcard-username d-block" itemprop="additionalName">lhbasura</span>
+                        <span class="p-name vcard-fullname d-block overflow-hidden"
+                              itemprop="name">{{Auth::user()->name}}</span>
                     </h1>
-                </div>
-
-
-                <div class="border-top border-gray-light py-3 js-pro-badge d-none">
-                    <svg class="octicon octicon-star mr-2 text-gray-light" viewBox="0 0 14 16" version="1.1" width="14"
-                         height="16" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                              d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/>
-                    </svg>
-                    <span class="label bg-purple text-uppercase">Pro</span>
-
                 </div>
 
 
                 <div class="js-profile-editable-area">
                     <div class="p-note user-profile-bio js-user-profile-bio mb-3">
-                        <div>Coding Dog</div>
+                        <div>{{Auth::user()->email}}</div>
                     </div>
 
                     <ul class="vcard-details mb-3">
@@ -1205,15 +1189,22 @@
 
 
                     <div class="border-bottom border-gray-dark py-3">
-                        <!-- '"` --><!-- </textarea></xmp> --><form data-pjax="true" data-pjax-preserve-scroll="true" class="TableObject" data-results-container="user-repositories-list" role="search" action="/lhbasura" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                        <!-- '"` --><!-- </textarea></xmp> -->
+                        <form data-pjax="true" data-pjax-preserve-scroll="true" class="TableObject"
+                              data-results-container="user-repositories-list" role="search" action="/lhbasura"
+                              accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
                             <div class="TableObject-item TableObject-item--primary pr-4">
                                 <input type="hidden" name="tab" value="repositories">
-                                <input type="search" id="your-repos-filter" name="q" class="form-control width-full js-autosearch-field" placeholder="Find a repository…" autocomplete="off" aria-label="Find a repository…" value="">
+                                <input type="search" id="your-repos-filter" name="q"
+                                       class="form-control width-full js-autosearch-field"
+                                       placeholder="Find a repository…" autocomplete="off"
+                                       aria-label="Find a repository…" value="">
                             </div>
 
                             <div class="TableObject-item text-right">
                                 <div class="select-menu d-inline-block js-menu-container js-select-menu select-menu-modal-right">
-                                    <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn select-menu-button js-menu-target" type="button"
+                                            aria-haspopup="true" aria-expanded="false">
                                         <i>Type:</i>
                                         <span class="js-select-button">
             All
@@ -1223,43 +1214,91 @@
                                     <div class="select-menu-modal-holder js-menu-content js-navigation-container">
                                         <div class="select-menu-modal">
                                             <div class="select-menu-header text-left">
-                                                <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+                                                <svg class="octicon octicon-x js-menu-close" role="img"
+                                                     aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12"
+                                                     height="16">
+                                                    <path fill-rule="evenodd"
+                                                          d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path>
+                                                </svg>
                                                 <span class="select-menu-title">Select type:</span>
                                             </div>
                                             <div class="select-menu-list" role="menu">
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item selected">
-                                                    <input type="radio" name="type" id="type_" value="" checked="checked">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item selected">
+                                                    <input type="radio" name="type" id="type_" value=""
+                                                           checked="checked">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">All</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_public" value="public">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Public</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_private" value="private">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Private</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_source" value="source">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Sources</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_fork" value="fork">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Forks</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_archived" value="archived">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Archived</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="type" id="type_mirror" value="mirror">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Mirrors</span>
                                                 </button>
                                             </div>
@@ -1268,7 +1307,8 @@
                                 </div>
 
                                 <div class="select-menu d-inline-block js-menu-container js-select-menu select-menu-modal-right">
-                                    <button class="btn select-menu-button js-menu-target" type="button" aria-haspopup="true" aria-expanded="false">
+                                    <button class="btn select-menu-button js-menu-target" type="button"
+                                            aria-haspopup="true" aria-expanded="false">
                                         <i>Language:</i>
                                         <span class="js-select-button">
               All
@@ -1278,53 +1318,117 @@
                                     <div class="select-menu-modal-holder js-menu-content js-navigation-container">
                                         <div class="select-menu-modal">
                                             <div class="select-menu-header text-left">
-                                                <svg class="octicon octicon-x js-menu-close" role="img" aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12" height="16"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
+                                                <svg class="octicon octicon-x js-menu-close" role="img"
+                                                     aria-label="Close" viewBox="0 0 12 16" version="1.1" width="12"
+                                                     height="16">
+                                                    <path fill-rule="evenodd"
+                                                          d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path>
+                                                </svg>
                                                 <span class="select-menu-title">Select language:</span>
                                             </div>
                                             <div class="select-menu-list" role="menu">
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item selected">
-                                                    <input type="radio" name="language" id="language_" value="" checked="checked">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item selected">
+                                                    <input type="radio" name="language" id="language_" value=""
+                                                           checked="checked">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">All</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="language" id="language_php" value="php">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">PHP</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="language" id="language_java" value="java">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Java</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="language" id="language_html" value="html">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">HTML</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
                                                     <input type="radio" name="language" id="language_c__" value="c++">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">C++</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
-                                                    <input type="radio" name="language" id="language_python" value="python">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
+                                                    <input type="radio" name="language" id="language_python"
+                                                           value="python">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Python</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
-                                                    <input type="radio" name="language" id="language_javascript" value="javascript">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
+                                                    <input type="radio" name="language" id="language_javascript"
+                                                           value="javascript">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">JavaScript</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
-                                                    <input type="radio" name="language" id="language_shell" value="shell">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
+                                                    <input type="radio" name="language" id="language_shell"
+                                                           value="shell">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Shell</span>
                                                 </button>
-                                                <button type="submit" class="width-full select-menu-item js-navigation-item ">
-                                                    <input type="radio" name="language" id="language_makefile" value="makefile">
-                                                    <svg class="octicon octicon-check select-menu-item-icon" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path></svg>
+                                                <button type="submit"
+                                                        class="width-full select-menu-item js-navigation-item ">
+                                                    <input type="radio" name="language" id="language_makefile"
+                                                           value="makefile">
+                                                    <svg class="octicon octicon-check select-menu-item-icon"
+                                                         viewBox="0 0 12 16" version="1.1" width="12" height="16"
+                                                         aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                              d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5L12 5z"></path>
+                                                    </svg>
                                                     <span class="select-menu-item-text js-select-button-text">Makefile</span>
                                                 </button>
                                             </div>
@@ -1333,68 +1437,104 @@
                                 </div>
 
                                 <a href="/new" class="btn btn-primary ml-3">
-                                    <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path></svg>
+                                    <svg class="octicon octicon-repo" viewBox="0 0 12 16" version="1.1" width="12"
+                                         height="16" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                              d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"></path>
+                                    </svg>
                                     New
                                 </a>
                             </div>
-                        </form></div>
+                        </form>
+                    </div>
 
+                    @foreach($discussions as $discussion)
+                        {{$discussion->name}}
+                    @endforeach
 
                     <div id="user-repositories-list">
 
-                        <ul data-filterable-for="your-repos-filter" data-filterable-type="substring">
+                        <ul>
+                            @foreach($discussions as $discussion)
+                                <li class="col-12 d-flex width-full py-4 border-bottom public source" >
+                                    <div class="col-9 d-inline-block">
+                                        <div class="d-inline-block mb-1">
+                                            <h3>
+                                                <a href="/discussion/{{$discussion->id}}" itemprop="name codeRepository">
+                                                    {{$discussion->title}}
+                                                </a>
+                                            </h3>
+                                        </div>
+                                        <div>
+                                            <p class="col-9 d-inline-block text-gray mb-2 pl-0 pr-4" itemprop="description">
+                                               {{$discussion->describe}}
+                                            </p>
+                                        </div>
 
 
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/forum" itemprop="name codeRepository">
-                                                forum</a>
-                                        </h3>
+                                        <div class="f6 text-gray mt-2">
+
+                                            <span class="repo-language-color ml-0"
+                                                  style="background-color:#4F5D95;"></span>
+                                            <span class="mr-3" itemprop="programmingLanguage">
+                                                {{$discussion->user->name}}
+                                             </span>
 
 
+                                            Updated
+
+
+                                            <relative-time datetime="{{$discussion->updated_at->format('Y-m-d\Th:i:s\Z')}}"
+                                                           title="2019年2月23日 GMT+8 上午1:24">
+
+                                            </relative-time>
+                                        </div>
                                     </div>
+                                    <div class="col-3 d-flex flex-column flex-justify-around">
+                                        <div class="text-right">
 
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            基于laravel框架做的社区demo
-                                        </p>
-                                    </div>
+                                            <div class="d-inline-block js-toggler-container js-social-container starring-container ">
+                                                <!-- '"` --><!-- </textarea></xmp> -->
+                                                <form class="starred js-social-form" data-remote="true"
+                                                      action="/lhbasura/forum/unstar" accept-charset="UTF-8"
+                                                      method="post"><input name="utf8" type="hidden" value="✓"><input
+                                                            type="hidden" name="authenticity_token"
+                                                            value="4I8Bfl7KHlSf92SYKguX2vRrYzSY4sHrpKlwWbvX6sVvMMXUvUEOC/jc8/FSNV9RTsyjl9YVBjn725h5VfuDYA==">
+                                                    <input type="hidden" name="context" value="user_stars">
+                                                    <button class="btn btn-sm  js-toggler-target" type="submit"
+                                                            value="Unstar" aria-label="Unstar this repository"
+                                                            title="Unstar lhbasura/forum"
+                                                            data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
+                                                        <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16"
+                                                             version="1.1" width="14" height="16" aria-hidden="true">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+                                                        </svg>
+                                                        Unstar
+                                                    </button>
+                                                </form>    <!-- '"` --><!-- </textarea></xmp> -->
+                                                <form class="unstarred js-social-form" data-remote="true"
+                                                      action="/lhbasura/forum/star" accept-charset="UTF-8"
+                                                      method="post"><input name="utf8" type="hidden" value="✓"><input
+                                                            type="hidden" name="authenticity_token"
+                                                            value="G0C/D2jKDHIdCLKB8RiruvHnMD8GT/xY6i60lqrirJvJpxghSU0d2HCg9aBZwMnZtRkcokMmTfSyFrpXecfL6Q==">
+                                                    <input type="hidden" name="context" value="user_stars">
+                                                    <button class="btn btn-sm  js-toggler-target" type="submit"
+                                                            value="Star" aria-label="Star this repository"
+                                                            title="Star lhbasura/forum"
+                                                            data-ga-click="Repository, click star button, action:profiles#show; text:Star">
+                                                        <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16"
+                                                             version="1.1" width="14" height="16" aria-hidden="true">
+                                                            <path fill-rule="evenodd"
+                                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path>
+                                                        </svg>
+                                                        Star
+                                                    </button>
+                                                </form>
+                                            </div>
 
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#4F5D95;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          PHP
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2019-02-22T17:24:13Z" title="2019年2月23日 GMT+8 上午1:24">a day ago</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/forum/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="4I8Bfl7KHlSf92SYKguX2vRrYzSY4sHrpKlwWbvX6sVvMMXUvUEOC/jc8/FSNV9RTsyjl9YVBjn725h5VfuDYA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/forum" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/forum/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="G0C/D2jKDHIdCLKB8RiruvHnMD8GT/xY6i60lqrirJvJpxghSU0d2HCg9aBZwMnZtRkcokMmTfSyFrpXecfL6Q==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/forum" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
+                                        </div>
+                                        <div class="text-right ">
 
 
   <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
@@ -1407,1211 +1547,23 @@
             <stop offset="90%" stop-color="#196127"></stop>
         </linearGradient>
         <mask id="sparkline-171902233" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,4 " fill="transparent" stroke="#8cc665" stroke-width="2">
+          <polyline transform="translate(0, 28) scale(1,-1)"
+                    points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,4 "
+                    fill="transparent" stroke="#8cc665" stroke-width="2">
         </polyline></mask>
       </defs>
 
       <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-171902233); mask: url(#sparkline-171902233)"></rect>
+        <rect x="0" y="-2" width="155" height="30"
+              style="stroke: none; fill: url(#gradient-171902233); mask: url(#sparkline-171902233)"></rect>
       </g>
     </svg>
   </span>
 
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/CommicHouse" itemprop="name codeRepository">
-                                                CommicHouse</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#b07219;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Java
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2019-02-20T01:36:24Z" title="2019年2月20日 GMT+8 上午9:36">4 days ago</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/CommicHouse/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3Szg40PF8Lx/KuRgTvSfS1ELo5gmlqGUy85rJwj6Tqw8xXoLRqLet3b8rmQ2yeUaYB/6V6BLz8qeCE4EIN0g7w==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/CommicHouse" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/CommicHouse/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="vEnw/pJXpP95pP34bUTr10SSM43kZPWLlN7lo/2hsTbxRYZ3LTo8irWFMXfHabGmWyNeHiiDBqnzq23QWzqm8A==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/CommicHouse" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-130489496" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-130489496" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,3 27,2 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,3 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-130489496); mask: url(#sparkline-130489496)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/lhbasura.github.io" itemprop="name codeRepository">
-                                                lhbasura.github.io</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            BY lhbasura-&gt;
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#e34c26;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          HTML
-        </span>
-
-                                        <span class="mr-3">
-          <svg class="octicon octicon-law mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"></path></svg>Apache License 2.0
-        </span>
-
-
-                                        Updated <relative-time datetime="2019-02-12T02:44:29Z" title="2019年2月12日 GMT+8 上午10:44">12 days ago</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/lhbasura.github.io/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ZwyVAXnyiTrq5bktIYnFpOx9uio0KLnGx96+XmLEdJfxijY+GyEpwC0/ZECO6bRv9Slb6KAtmTgdp+WGq0Yhhg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/lhbasura.github.io" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/lhbasura.github.io/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ARkchpHcC7P82gaWY9XFu28NAYIZVjWMX1NvKF6BFnLx1DcSjR+tuF8nX90kXyq6QG5UeP+Or9zrTG9oDeExjw==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/lhbasura.github.io" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-153731607" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-153731607" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,13 102,3 105,3 108,8 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,2 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -6)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-153731607); mask: url(#sparkline-153731607)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/algorithm" itemprop="name codeRepository">
-                                                algorithm</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            算法学习
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#f34b7d;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          C++
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2019-02-11T13:46:39Z" title="2019年2月11日 GMT+8 下午9:46">12 days ago</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/algorithm/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="M96sny79QCwjPy01KYK22vlhADFO5IyE53mtnYoum+690pbEog4+J8qYozLAEsiMhyd9SKs6UWEGG8IYf5GEzw==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/algorithm" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/algorithm/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="ObHZHe1LEjt+MuLYaCNLjcDzkFb2qBBex/P8SwGllJKjBWfDrx5pxwQFU+oiG4VpYB7S9qosT+iVoVw2Yd+WBA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/algorithm" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-170134759" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-170134759" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,2 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -12)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-170134759); mask: url(#sparkline-170134759)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/DesignPattern" itemprop="name codeRepository">
-                                                DesignPattern</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            设计模式学习
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#b07219;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Java
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2019-01-28T05:25:23Z" title="2019年1月28日 GMT+8 下午1:25">26 days ago</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/DesignPattern/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="nz5rCkLu6qUHuELLzyJnb4yT2kapZ1kn4uiDK7jZLbRgQ75kCX3+efV5lBqgTuqNTrCHglWGwHYcSA9gZvtG2Q==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/DesignPattern" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/DesignPattern/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="5rXNmeFh15/QPsv6qma+9UvRXURpimqbEfWepp3xyMFGgL/akvmutAYY8ryqA963CoEjlZ1xo0kt05zqYPamnQ==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/DesignPattern" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-167879024" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-167879024" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,4 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-167879024); mask: url(#sparkline-167879024)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/Shop" itemprop="name codeRepository">
-                                                Shop</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#e34c26;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          HTML
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2018-12-27T05:27:54Z" title="2018年12月27日 GMT+8 下午1:27">on 27 Dec 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/Shop/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="9mOI4VTBw5vFqqcV3iJ94dBLTI/CzjMk81UrKcBnQt6ivTXEDo6pMEekua97e/eg6NDsUJFB8oCkIM5S61UkgA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/Shop" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/Shop/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="L7q6lRrIpyLc3gjzMw9uWl57VmGJq6VoTJ9YkXB7awxNuhAcax+UfB8hDYoO9AUENQqe8QrRkStAnTAfx1EfQA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/Shop" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-134965923" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-134965923" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,2 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,4 102,3 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,2 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-134965923); mask: url(#sparkline-134965923)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/WXgzh" itemprop="name codeRepository">
-                                                WXgzh</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#3572A5;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Python
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2018-10-17T06:57:52Z" title="2018年10月17日 GMT+8 下午2:57">on 17 Oct 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/WXgzh/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="mGvfKYp8HZ1gsqWMzyvjQAP6RRJ/jFi59Mput5RPsMcjf6GBwQdZZjiriqzbOgGtEhCQi2EJO4DFQ+sGMtunKA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/WXgzh" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/WXgzh/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="cQZjCzv4xEc/a0rfj4JMnYqtp6RE8yUbPFAi9/9+GpafIOsjWMTv49eGXMYWbb/FpVj1a7ogq587LLfWv0TCDQ==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/WXgzh" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-124212221" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-124212221" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,4 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,2 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-124212221); mask: url(#sparkline-124212221)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/gini-nginx-conf" itemprop="name codeRepository">
-                                                gini-nginx-conf</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <a class="muted-link mr-3" href="/lhbasura/gini-nginx-conf/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            1
-                                        </a>
-
-
-
-                                        Updated <relative-time datetime="2018-10-08T08:49:03Z" title="2018年10月8日 GMT+8 下午4:49">on 8 Oct 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/gini-nginx-conf/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="4spgL+mftAqcxtk/2SC8hQY4Jd9vkt/UkJquZ2KQ4pz0BRJBrnGcaanfOwS1ziwTCIuMkoJIAr+qGSP4ic0TZw==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/gini-nginx-conf" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/gini-nginx-conf/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="QIWOCh7bt93c8Eh0PU0CIOyb39ETTdD/c822+l9Z1xA07ZmkDOmJTXXt7ZnTEVY70iGROQ5WJTaqt+mt6LZ+Dw==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/gini-nginx-conf" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-152045795" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-152045795" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,3 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-152045795); mask: url(#sparkline-152045795)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/lims2-deploy-doc" itemprop="name codeRepository">
-                                                lims2-deploy-doc</a>
-                                        </h3>
-
-                                        <span class="f6 text-gray mb-1">
-          Forked from <a class="muted-link" href="/17kong/lims2-deploy-doc">17kong/lims2-deploy-doc</a>
-        </span>
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#f1e05a;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          JavaScript
-        </span>
-                                        <a class="muted-link mr-3" href="/lhbasura/lims2-deploy-doc/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            2
-                                        </a>
-
-
-
-                                        Updated <relative-time datetime="2018-09-30T08:24:27Z" title="2018年9月30日 GMT+8 下午4:24">on 30 Sep 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/lims2-deploy-doc/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="I7sMHRNjJ2Xrc7IuJR0u/skmt/533cQi3s4VvspEk3rnbJdqm+Gzer8x3IsBsGq04UfnztrxpBQjcHqiP2rbhg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/lims2-deploy-doc" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/lims2-deploy-doc/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="h+TP05RtdEbM3JjrYWx1iBR2RgRpNgeBqOVUs/h3LWBFwfh3TVicqKuDqSD64rKzhU/NGCCL6HKHUINdHD+z+Q==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/lims2-deploy-doc" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-144812260" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-144812260" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,5 6,2 9,3 12,3 15,1 18,3 21,2 24,2 27,1 30,1 33,1 36,1 39,1 42,2 45,1 48,1 51,1 54,2 57,1 60,1 63,1 66,1 69,1 72,2 75,1 78,1 81,1 84,1 87,1 90,1 93,2 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -10)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-144812260); mask: url(#sparkline-144812260)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/youzi" itemprop="name codeRepository">
-                                                youzi</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            a humen resource website
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#4F5D95;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          PHP
-        </span>
-
-                                        <span class="mr-3">
-          <svg class="octicon octicon-law mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"></path></svg>Other
-        </span>
-
-
-                                        Updated <relative-time datetime="2018-08-29T13:11:20Z" title="2018年8月29日 GMT+8 下午9:11">on 29 Aug 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/youzi/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="WVl9T7tYzmX9ylkal1NfypMoTfdX3TKZd/+uBk/ksuw+3eI+W+rODX4hJxkNTu6JgT77Vy9frewajYzknIEyaQ==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/youzi" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/youzi/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="r07SvTop5XzhhKonX/Vl3Zc6JSA4S3HyqyZllEQ64Ge1TjFyvM4BZ+8Xm5LN009G68EQmGyomXCyHNncXisZjg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/youzi" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-111067748" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-111067748" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,3 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -11)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-111067748); mask: url(#sparkline-111067748)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/laravel-server-script" itemprop="name codeRepository">
-                                                laravel-server-script</a>
-                                        </h3>
-
-                                        <span class="f6 text-gray mb-1">
-          Forked from <a class="muted-link" href="/JellyBool/laravel-server-script">JellyBool/laravel-server-script</a>
-        </span>
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            Laravel Server Script
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#89e051;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Shell
-        </span>
-                                        <a class="muted-link mr-3" href="/lhbasura/laravel-server-script/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            51
-                                        </a>
-
-
-
-                                        Updated <relative-time datetime="2018-08-16T15:00:57Z" title="2018年8月16日 GMT+8 下午11:00">on 16 Aug 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/laravel-server-script/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="AaAaE3FX/C8z9+fqnjtyArUmkavGL9dBnIy/U7o1BNu03I7BZPtyhqSDvfiTHOKUGwYOIT091dQOcV+wqcl+OA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/laravel-server-script" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/laravel-server-script/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="UX/2KKGoEUO0Kq1PLCsAesaDWb6FTSDQbRqh8SFeV9DpiG+6H6FBHfUcKOs3DqYvduSeko1FJLrNNQbR0gw68A==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/laravel-server-script" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-159136288" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-159136288" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,10 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -8)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-159136288); mask: url(#sparkline-159136288)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/gini" itemprop="name codeRepository">
-                                                gini</a>
-                                        </h3>
-
-                                        <span class="f6 text-gray mb-1">
-          Forked from <a class="muted-link" href="/iamfat/gini">iamfat/gini</a>
-        </span>
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            Gini PHP Framework
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#4F5D95;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          PHP
-        </span>
-                                        <a class="muted-link mr-3" href="/lhbasura/gini/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            20
-                                        </a>
-
-                                        <span class="mr-3">
-          <svg class="octicon octicon-law mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"></path></svg>MIT License
-        </span>
-
-
-                                        Updated <relative-time datetime="2018-08-08T02:24:25Z" title="2018年8月8日 GMT+8 上午10:24">on 8 Aug 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/gini/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="WJo1E7Y/x8LbNgvY7b4svh+BrZ3E36KiB4U8EnFRwSciA4aBvWpOtGLhgYxq4WPd/FVj1W99RJOPu6JRHjPqyQ==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/gini" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/gini/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="dwu3rbqp59Q48eh0zgUWjj1PezTVXRXjyiw8mcveMh+++Yde8Y+CFbug97A75xa/ocpjuMBu4ylFssyTwB+irw==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/gini" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-144125939" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-144125939" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,2 3,1 6,1 9,1 12,2 15,3 18,1 21,1 24,1 27,1 30,1 33,3 36,7 39,7 42,2 45,7 48,6 51,4 54,1 57,1 60,1 63,5 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -9)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-144125939); mask: url(#sparkline-144125939)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/Jt808" itemprop="name codeRepository">
-                                                Jt808</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#b07219;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Java
-        </span>
-                                        <a class="muted-link mr-3" href="/lhbasura/Jt808/stargazers">
-                                            <svg aria-label="star" class="octicon octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
-                                            5
-                                        </a>
-                                        <a class="muted-link mr-3" href="/lhbasura/Jt808/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            10
-                                        </a>
-
-
-
-                                        Updated <relative-time datetime="2018-03-08T05:23:35Z" title="2018年3月8日 GMT+8 下午1:23">on 8 Mar 2018</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/Jt808/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="pDkzJcB6b24EVCp3ByHmwIv5jD+DUC7WIT0970g49CYolywPp5Y3d3wJwrBOmvghHaJckw0Kvh4iLU5CqPzRbg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/Jt808" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/Jt808/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="uXkV3WN1/9KKKXil6cYCB/IE1wDtWARk6qW1B7spzqnxTsfYhs0j7UOSVCcYePq8lw++QiA5hgDnt2W9jUu9/g==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/Jt808" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-90535070" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-90535070" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,2 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -12)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-90535070); mask: url(#sparkline-90535070)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/cdn" itemprop="name codeRepository">
-                                                cdn</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#f34b7d;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          C++
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2017-03-29T06:12:08Z" title="2017年3月29日 GMT+8 下午2:12">on 29 Mar 2017</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/cdn/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="FOmqC/UuWHeB2fKHm0OtyGVctmGdV3DgWOsiDgHqbHxW+VZslLf9R8brnD2cLD/W1dcmKMdvaEQk1xOfdFz8YQ==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/cdn" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/cdn/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="chJuRujiDU4ayueCqCxD/FZH3FbhQCeH9tOM/63Lemm7S8EYRMWoGP45e9iuYvVgerCdrEVyJ8LHRLuKhC5PGg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/cdn" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-86337831" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-86337831" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -12)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-86337831); mask: url(#sparkline-86337831)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/SDK-gcc" itemprop="name codeRepository">
-                                                SDK-gcc</a>
-                                        </h3>
-
-
-                                    </div>
-
-                                    <div>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#427819;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Makefile
-        </span>
-
-
-
-                                        Updated <relative-time datetime="2017-03-26T07:16:53Z" title="2017年3月26日 GMT+8 下午3:16">on 26 Mar 2017</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/SDK-gcc/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="cWSVNONI6tv6475vIlZHxE96ostnSirfYTRHwJH0knz3VwH2fo2ffgm/0Ds2OOU43264ETB2txiYkCEIia3rxg==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/SDK-gcc" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/SDK-gcc/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="pFRK1Gib7hpXmA7OAIhuuLGvG4ZG4QevUlUXFS5D09G7C1PsK2GhaIlyps8oE0yV+EX0owsCcJJoreVIMUz//w==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/SDK-gcc" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right mt-2">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-86214715" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-86214715" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -12)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-86214715); mask: url(#sparkline-86214715)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-                            <li class="col-12 d-flex width-full py-4 border-bottom public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
-                                <div class="col-9 d-inline-block">
-                                    <div class="d-inline-block mb-1">
-                                        <h3>
-                                            <a href="/lhbasura/HMM" itemprop="name codeRepository">
-                                                HMM</a>
-                                        </h3>
-
-                                        <span class="f6 text-gray mb-1">
-          Forked from <a class="muted-link" href="/guyz/HMM">guyz/HMM</a>
-        </span>
-
-                                    </div>
-
-                                    <div>
-                                        <p class="col-9 d-inline-block text-gray mb-2 pr-4" itemprop="description">
-                                            Python Hidden Markov Models framework
-                                        </p>
-                                    </div>
-
-
-                                    <div class="f6 text-gray mt-2">
-
-                                        <span class="repo-language-color ml-0" style="background-color:#3572A5;"></span>
-                                        <span class="mr-3" itemprop="programmingLanguage">
-          Python
-        </span>
-                                        <a class="muted-link mr-3" href="/lhbasura/HMM/network">
-                                            <svg aria-label="fork" class="octicon octicon-repo-forked" viewBox="0 0 10 16" version="1.1" width="10" height="16" role="img"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
-                                            45
-                                        </a>
-
-
-
-                                        Updated <relative-time datetime="2013-06-18T15:54:31Z" title="2013年6月18日 GMT+8 下午11:54">on 18 Jun 2013</relative-time>
-                                    </div>
-                                </div>
-
-                                <div class="col-3 d-flex flex-column flex-justify-around">
-                                    <div class="text-right">
-
-                                        <div class="d-inline-block js-toggler-container js-social-container starring-container ">
-                                            <!-- '"` --><!-- </textarea></xmp> --><form class="starred js-social-form" data-remote="true" action="/lhbasura/HMM/unstar" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="mWMk+Z9mXjs4WQ1o9t2u9kEzqtC1i1grLrKAHz+yoG1bWazfcinDLjuOy5n+PfHTkngOMDJo4pokez2SBQd7HA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Unstar" aria-label="Unstar this repository" title="Unstar lhbasura/HMM" data-ga-click="Repository, click unstar button, action:profiles#show; text:Unstar">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Unstar
-                                                </button>
-                                            </form>    <!-- '"` --><!-- </textarea></xmp> --><form class="unstarred js-social-form" data-remote="true" action="/lhbasura/HMM/star" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="lPsa1dzv5BgAgzYLO7s1APxLTIr7nmk3d7HqeLJX7MaGkLN3oXTXxT+ucBUgzyKZXzY6NSaqBlghnB8JHSfPOA==">
-                                                <input type="hidden" name="context" value="user_stars">
-                                                <button class="btn btn-sm  js-toggler-target" type="submit" value="Star" aria-label="Star this repository" title="Star lhbasura/HMM" data-ga-click="Repository, click star button, action:profiles#show; text:Star">
-                                                    <svg class="octicon octicon-star mr-1" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>Star
-                                                </button>
-                                            </form>  </div>
-
-                                    </div>
-
-                                    <div class="text-right ">
-
-
-  <span class="d-inline-block tooltipped tooltipped-s" aria-label="Past year of activity">
-    <svg width="155" height="30">
-      <defs>
-        <linearGradient id="gradient-137554465" x1="0" x2="0" y1="1" y2="0">
-            <stop offset="10%" stop-color="#c6e48b"></stop>
-            <stop offset="33%" stop-color="#7bc96f"></stop>
-            <stop offset="66%" stop-color="#239a3b"></stop>
-            <stop offset="90%" stop-color="#196127"></stop>
-        </linearGradient>
-        <mask id="sparkline-137554465" x="0" y="0" width="155" height="28">
-          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
-        </polyline></mask>
-      </defs>
-
-      <g transform="translate(0, -12)">
-        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-137554465); mask: url(#sparkline-137554465)"></rect>
-      </g>
-    </svg>
-  </span>
-
-                                    </div>
-                                </div>
-                            </li>
-
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
 

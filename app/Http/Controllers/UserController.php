@@ -14,8 +14,12 @@ class UserController extends Controller
 
     public function store(UserRequest $request)
     {
-        $request->file('avatar');
-        dd('you will store your info');
+        $user=\Auth::user();
+        $file=$request->file('avatar');
+        $destinationPath='/upload/avatar';
+        $fileName=$user->id.'_'.time().'_'.$file->getClientOriginalName();
+        $file->move($destinationPath,$fileName);
+        $user->avatar=$destinationPath.'/'.$fileName;
     }
     //
     public function update($id){
