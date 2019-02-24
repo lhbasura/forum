@@ -1,12 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="dns-prefetch" href="https://github.githubassets.com">
 
     <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
     <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="{{asset('js/bootstrap.js')}}"></script>
 
     <link crossorigin="anonymous" media="all"
           integrity="sha512-RPWwIpqyjxv5EpuWKUKyeZeWz9QEzIbAWTiYOuxGieUq7+AMiZbsLeQMfEdyEIUoNjLagHK0BEm92BmXnvaH4Q=="
@@ -24,17 +26,9 @@
     <meta name="description" content="Coding Dog. lhbasura has 16 repositories available. Follow their code on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
     <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
-    <meta property="fb:app_id" content="1401488693436528">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta property="og:image" content="https://avatars1.githubusercontent.com/u/22231880?s=400&amp;v=4"/>
-    <meta property="og:site_name" content="GitHub"/>
-    <meta property="og:type" content="profile"/>
-    <meta property="og:title" content="lhbasura - Overview"/>
-    <meta property="og:url" content="https://github.com/lhbasura"/>
-    <meta property="og:description"
-          content="Coding Dog. lhbasura has 16 repositories available. Follow their code on GitHub."/>
-    <meta property="profile:username" content="lhbasura"/>
 
     <link rel="assets" href="https://github.githubassets.com/">
     <meta name="pjax-timeout" content="1000">
@@ -47,17 +41,6 @@
     <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
-
-    <meta name="octolytics-host" content="collector.githubapp.com"/>
-    <meta name="octolytics-app-id" content="github"/>
-    <meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event"/>
-    <meta name="octolytics-dimension-request_id" content="CF71:7627:124EC30:19BCD31:5C716AA1"/>
-    <meta name="octolytics-dimension-region_edge" content="ap-southeast-1"/>
-    <meta name="octolytics-dimension-region_render" content="iad"/>
-    <meta name="octolytics-actor-id" content="22231880"/>
-    <meta name="octolytics-actor-login" content="lhbasura"/>
-    <meta name="octolytics-actor-hash" content="78a90dfe9d582e56a6d52ce3edbcd4bbd0f653502fa1432f836e990b839cd7d9"/>
-    <meta name="analytics-location" content="/&lt;user-name&gt;" data-pjax-transient="true"/>
 
 
     <meta name="google-analytics" content="UA-3769691-2">
@@ -106,7 +89,7 @@
 <body class="logged-in env-production emoji-size-boost page-profile mine">
 
 
-<div class="position-relative js-header-wrapper ">
+<div class="position-relative js-header-wrapper">
     <a href="#start-of-content" tabindex="1" class="p-3 bg-blue text-white show-on-focus js-skip-to-content">Skip to
         content</a>
     <div id="js-pjax-loader-bar" class="pjax-loader-bar">
@@ -772,37 +755,76 @@
                 </div>
 
                 <style>
-                    .mask {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 230px;
-                        height: 230px;
-                        text-align: center;
-                        background: rgba(101, 101, 101, 0.6);
-                        color: #ffffff;
-                        font-size: 150px;
-                        opacity: 0;
-                    }
 
-                    a.u-photo:hover .mask {
-                        opacity: 1;
-                    }
-
-                    .pinned-item-list-item {
-                        width: 355px;
-                    }
                 </style>
                 <a class="u-photo d-block tooltipped tooltipped-s" aria-label="Change your avatar"
+                   data-toggle="modal" data-target="#myModal"
                    data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:22231880,&quot;target&quot;:&quot;EDIT_AVATAR&quot;,&quot;user_id&quot;:22231880,&quot;client_id&quot;:&quot;402326080.1550854094&quot;,&quot;originating_request_id&quot;:&quot;CF71:7627:124EC30:19BCD31:5C716AA1&quot;,&quot;originating_url&quot;:&quot;https://github.com/lhbasura&quot;}}"
                    data-hydro-click-hmac="d9fcc51e65f9a042a0b5e3753187365e1581c87746d0ee60dd8885dec894fc73"
-                   href="/account"><img alt="" width="230" height="230"
-                                        class="avatar width-full avatar-before-user-status"
-                                        src="{{Auth::user()->avatar}}"/>
-                    <div class="mask width-full">
+                   href="#"><img alt="" width="230" height="230"
+                                 class="avatar width-full avatar-before-user-status"
+                                 src="{{Auth::user()->avatar}}"/>
+                    <div class="mask width-full text-center">
                         <i class="fa fa-plus m-auto"></i>
                     </div>
                 </a>
+                <!-- 模态框 -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">更改头像</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                        {!! Form::open(['route' => 'user.store','files'=>true,'id'=>'avatar_form', 'method' => 'post']) !!}
+
+                        @csrf
+                        <!-- 模态框主体 -->
+                            <div class="modal-body text-center">
+                                <img alt="" id="image" width="230" height="230"
+                                     class="align-self-center"
+                                     src="{{Auth::user()->avatar}}"/>
+
+                                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" class="d-none"
+                                       name="avatar">
+                                <div class="col-md-6 mt-2 d-block m-auto btn btn-primary btn-change">修改</div>
+
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="submit" class="btn btn-primary">保存</button>
+                            </div>
+                            {!! Form::close() !!}
+                            <script>
+                                $(function () {
+                                    $('#avatar_form').on('click', '.btn-change', function () {
+                                        $('input[name="avatar"]').trigger('click');
+                                    }).on('change', 'input[name="avatar"]', function () {
+
+                                        var file = $(this).get(0).files[0];
+                                        //创建用来读取此文件的对象
+                                        var reader = new FileReader();
+                                        //使用该对象读取file文件
+                                        reader.readAsDataURL(file);
+                                        //读取文件成功后执行的方法函数
+                                        reader.onload=function(e){
+                                            console.log(e);
+                                            $('#image').get(0).src = e.target.result;
+                                        };
+                                        console.log($('#image').attr('src'))
+
+                                    })
+                                });
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
 
 
                 <div class="user-status-container user-status-container-border position-relative">
@@ -1456,18 +1478,20 @@
 
                         <ul>
                             @foreach($discussions as $discussion)
-                                <li class="col-12 d-flex width-full py-4 border-bottom public source" >
+                                <li class="col-12 d-flex width-full py-4 border-bottom public source">
                                     <div class="col-9 d-inline-block">
                                         <div class="d-inline-block mb-1">
                                             <h3>
-                                                <a href="/discussion/{{$discussion->id}}" itemprop="name codeRepository">
+                                                <a href="/discussion/{{$discussion->id}}"
+                                                   itemprop="name codeRepository">
                                                     {{$discussion->title}}
                                                 </a>
                                             </h3>
                                         </div>
                                         <div>
-                                            <p class="col-9 d-inline-block text-gray mb-2 pl-0 pr-4" itemprop="description">
-                                               {{$discussion->describe}}
+                                            <p class="col-9 d-inline-block text-gray mb-2 pl-0 pr-4"
+                                               itemprop="description">
+                                                {{$discussion->describe}}
                                             </p>
                                         </div>
 
@@ -1484,8 +1508,9 @@
                                             Updated
 
 
-                                            <relative-time datetime="{{$discussion->updated_at->format('Y-m-d\Th:i:s\Z')}}"
-                                                           title="2019年2月23日 GMT+8 上午1:24">
+                                            <relative-time
+                                                    datetime="{{$discussion->updated_at->format('Y-m-d\Th:i:s\Z')}}"
+                                                    title="2019年2月23日 GMT+8 上午1:24">
 
                                             </relative-time>
                                         </div>

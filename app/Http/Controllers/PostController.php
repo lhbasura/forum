@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Discussion;
 use App\Http\Requests\PostRequest;
 use Chenhua\MarkdownEditor\Facades\MarkdownEditor;
-use Illuminate\Http\Request;
 
 class PostController extends Controller
 {

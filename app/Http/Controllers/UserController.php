@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -11,15 +10,20 @@ class UserController extends Controller
     {
         $this->middleware('auth')->only('store');
     }
-
+    public function index(){
+        return 'index of User';
+    }
     public function store(UserRequest $request)
     {
         $user=\Auth::user();
         $file=$request->file('avatar');
-        $destinationPath='/upload/avatar';
+        $destinationPath='uploads/avatar';
         $fileName=$user->id.'_'.time().'_'.$file->getClientOriginalName();
         $file->move($destinationPath,$fileName);
-        $user->avatar=$destinationPath.'/'.$fileName;
+        $avatar=$destinationPath.'/'.$fileName;
+        $user->avatar=$avatar;
+        $user->save();
+        return redirect()->action('HomeController@index');
     }
     //
     public function update($id){

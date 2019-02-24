@@ -1,6 +1,7 @@
-.navbar{
-  margin-bottom:0px;
+.navbar {
+  margin-bottom: 0px;
 }
+
 .mask {
   position: absolute;
   top: 0;
@@ -12,9 +13,10 @@
   color: #ffffff;
   font-size: 100px;
   opacity: 0;
-  .fa.fa-plus{
-    line-height: 230px;
-  }
+}
+
+.mask .fa.fa-plus {
+  line-height: 230px;
 }
 
 a.u-photo:hover .mask {
@@ -24,3 +26,4 @@ a.u-photo:hover .mask {
 .pinned-item-list-item {
   width: 355px;
 }
+
