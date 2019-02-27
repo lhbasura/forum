@@ -10,6 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <script src="{{asset('js/form.js')}}"></script>
+    <script src="{{asset('js/jcrop.js')}}"></script>
 
 
 
@@ -805,13 +806,11 @@
                             {!! Form::close() !!}
                             <script>
                                 $(function () {
-
                                     $('#avatar_form').on('click', '.btn-change', function () {
                                         $('input[name="avatar"]').trigger('click');
                                     }).on('change', 'input[name="avatar"]', function () {
                                         $('#avatar_form').ajaxForm(function(response)
                                         {
-                                            console.log(response);
                                             $('img.avatar').each(function(){
                                                  $(this).get(0).src=response;
                                             });
@@ -827,6 +826,7 @@
                                             console.log(e);
                                             $('#image').get(0).src = e.target.result;
                                         };
+                                        $(function(){ $('#image').Jcrop(); });
 
                                     })
                                 });
