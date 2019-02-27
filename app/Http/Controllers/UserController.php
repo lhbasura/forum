@@ -23,10 +23,13 @@ class UserController extends Controller
         $avatar=$destinationPath.'/'.$fileName;
         $user->avatar=$avatar;
         $user->save();
-        return redirect()->action('HomeController@index');
+        return $avatar;
     }
     //
     public function update($id){
+
+    }
+    public function updateAvatar(){
 
     }
 }

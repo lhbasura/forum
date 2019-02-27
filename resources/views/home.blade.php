@@ -9,6 +9,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{asset('js/bootstrap.js')}}"></script>
+    <script src="{{asset('js/form.js')}}"></script>
+
+
 
     <link crossorigin="anonymous" media="all"
           integrity="sha512-RPWwIpqyjxv5EpuWKUKyeZeWz9QEzIbAWTiYOuxGieUq7+AMiZbsLeQMfEdyEIUoNjLagHK0BEm92BmXnvaH4Q=="
@@ -802,10 +805,18 @@
                             {!! Form::close() !!}
                             <script>
                                 $(function () {
+
                                     $('#avatar_form').on('click', '.btn-change', function () {
                                         $('input[name="avatar"]').trigger('click');
                                     }).on('change', 'input[name="avatar"]', function () {
-
+                                        $('#avatar_form').ajaxForm(function(response)
+                                        {
+                                            console.log(response);
+                                            $('img.avatar').each(function(){
+                                                 $(this).get(0).src=response;
+                                            });
+                                            $('#myModal').modal('hide');
+                                        });
                                         var file = $(this).get(0).files[0];
                                         //创建用来读取此文件的对象
                                         var reader = new FileReader();
@@ -816,7 +827,6 @@
                                             console.log(e);
                                             $('#image').get(0).src = e.target.result;
                                         };
-                                        console.log($('#image').attr('src'))
 
                                     })
                                 });
