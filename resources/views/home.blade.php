@@ -762,9 +762,7 @@
 
                 </style>
                 <a class="u-photo d-block tooltipped tooltipped-s" aria-label="Change your avatar"
-                   data-toggle="modal" data-target="#myModal"
-                   data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:22231880,&quot;target&quot;:&quot;EDIT_AVATAR&quot;,&quot;user_id&quot;:22231880,&quot;client_id&quot;:&quot;402326080.1550854094&quot;,&quot;originating_request_id&quot;:&quot;CF71:7627:124EC30:19BCD31:5C716AA1&quot;,&quot;originating_url&quot;:&quot;https://github.com/lhbasura&quot;}}"
-                   data-hydro-click-hmac="d9fcc51e65f9a042a0b5e3753187365e1581c87746d0ee60dd8885dec894fc73"
+
                    href="#"><img alt="" width="230" height="230"
                                  class="avatar width-full avatar-before-user-status"
                                  src="{{Auth::user()->avatar}}"/>
@@ -783,18 +781,27 @@
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
 
-                        {!! Form::open(['route' => 'user.store','files'=>true,'id'=>'avatar_form', 'method' => 'post']) !!}
+                            {!! Form::open(['url' => '/user/avatar', 'id'=>'avatar_form','method' => 'post']) !!}
+                            	@csrf
+                            <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" class="d-none"
+                                   name="photo">
+
+                            {!! Form::close() !!}
+
+                        {!! Form::open(['url' => '/user','files'=>true,'id'=>'user_form','method' => 'post']) !!}
 
                         @csrf
                         <!-- 模态框主体 -->
                             <div class="modal-body text-center">
-                                <img alt="" id="image" width="230" height="230"
+                                <img alt="" id="image" width="300" height="300"
                                      class="align-self-center"
                                      src="{{Auth::user()->avatar}}"/>
+                                <input type="text" name="avatar" hidden>
+                                <input type="text" name="x" hidden>
+                                <input type="text" name="y" hidden>
+                                <input type="text" name="w" hidden>
+                                <input type="text" name="h" hidden>
 
-                                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" class="d-none"
-                                       name="avatar">
-                                <div class="col-md-6 mt-2 d-block m-auto btn btn-primary btn-change">修改</div>
 
                             </div>
 
@@ -806,28 +813,43 @@
                             {!! Form::close() !!}
                             <script>
                                 $(function () {
-                                    $('#avatar_form').on('click', '.btn-change', function () {
-                                        $('input[name="avatar"]').trigger('click');
-                                    }).on('change', 'input[name="avatar"]', function () {
-                                        $('#avatar_form').ajaxForm(function(response)
-                                        {
-                                            $('img.avatar').each(function(){
-                                                 $(this).get(0).src=response;
-                                            });
-                                            $('#myModal').modal('hide');
+                                    var jcropObj= $('#image').Jcrop({
+                                        aspectRatio:1,
+                                        onSelect: updateCoords,
+                                        setSelect: [180,180,10,10]});
+                                    function updateCoords(c){
+                                        $('input[name="x"]').val(c.x);
+                                        $('input[name="y"]').val(c.y);
+                                        $('input[name="w"]').val(c.w+10);
+                                        $('input[name="h"]').val(c.h+10);
+                                    }
+                                    // $('#user_form').ajaxForm(function(response)
+                                    // {
+                                    //     $('img.avatar').attr('src',response);
+                                    //     $('#myModal').modal('hide');
+                                    // });
+                                    $('body').on('click', '.btn-change', function () {
+                                        $('input[name="photo"]').trigger('click');
+                                    }).on('click','a.u-photo',function () {
+                                        $('input[name="photo"]').trigger('click');
+                                    }).on('change', 'input[name="photo"]', function () {
+                                        $('#avatar_form').ajaxSubmit(function (response) {
+                                            $('.jcrop-holder img').attr('src',response);
+                                            $('input[name="avatar"]').val(response);
+                                            $('#myModal').modal('show');
                                         });
-                                        var file = $(this).get(0).files[0];
-                                        //创建用来读取此文件的对象
-                                        var reader = new FileReader();
-                                        //使用该对象读取file文件
-                                        reader.readAsDataURL(file);
-                                        //读取文件成功后执行的方法函数
-                                        reader.onload=function(e){
-                                            console.log(e);
-                                            $('#image').get(0).src = e.target.result;
-                                        };
-                                        $(function(){ $('#image').Jcrop(); });
-
+                                        // var file = $(this).get(0).files[0];
+                                        // //创建用来读取此文件的对象
+                                        // var reader = new FileReader();
+                                        // //使用该对象读取file文件
+                                        // reader.readAsDataURL(file);
+                                        // //读取文件成功后执行的方法函数
+                                        // reader.onload=function(e){
+                                        //     console.log(e);
+                                        //     $('#image').get(0).src = e.target.result;
+                                        //     $('#myModal').modal('show');
+                                        //
+                                        // };
                                     })
                                 });
                             </script>
