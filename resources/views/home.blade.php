@@ -820,8 +820,8 @@
                                     function updateCoords(c){
                                         $('input[name="x"]').val(c.x);
                                         $('input[name="y"]').val(c.y);
-                                        $('input[name="w"]').val(c.w+10);
-                                        $('input[name="h"]').val(c.h+10);
+                                        $('input[name="w"]').val(c.w);
+                                        $('input[name="h"]').val(c.h);
                                     }
                                     // $('#user_form').ajaxForm(function(response)
                                     // {
