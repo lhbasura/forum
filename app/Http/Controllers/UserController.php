@@ -36,7 +36,7 @@ class UserController extends Controller
     public function avatar(Request $request){
         $user=\Auth::user();
         $file=$request->file('photo');
-        $destinationPath='uploads/avatar';
+        $destinationPath='/uploads/avatar';
         $fileName=$user->id.'_'.time().'_'.$file->getClientOriginalName();
         $avatar=$destinationPath.'/'.$fileName;
         $file->move($destinationPath,$fileName);
