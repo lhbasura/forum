@@ -12,9 +12,11 @@ class CommentController extends Controller
     //
     public function store(CommentRequest $request)
     {
-
+      //  return $request->all();
         $comment=Comment::create(array_merge($request->all(),['user_id'=>\Auth::user()->id]));
-
-        return redirect()->action('PostController@show',['id'=>$request->get('discussion_id')]);
+        if($comment->id)
+            return 'success';
+        return 'failed';
+      //  return redirect()->action('PostController@show',['id'=>$request->get('discussion_id')]);
     }
 }

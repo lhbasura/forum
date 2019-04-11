@@ -29,8 +29,7 @@
 
     <div class="container">
         <div class="row">
-
-            <article-component inline-template>
+            <article-component :init-value="{{'{user_id:'.Auth::user()->id.',discussion_id:'.$discussion->id.',_token:"'.csrf_token().'"}'}}" inline-template>
                 <div class="col-md-12" role="main">
                     <article class="markdown-body">
                         {!! $html !!}
@@ -52,13 +51,26 @@
                         </div>
                     @endforeach
 
+                    <div class="media pt-4" v-for="comment in comments">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="mr-2 rounded" src="{{Auth::user()->avatar}}"
+                                     style="width: 48px;height: 48px;">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h6 class="media-heading">{{Auth::user()->name}}</h6>
+                            @{{comment.body}}
+                        </div>
+                    </div>
+
                     <div class="pt-4">
                         @if(Auth::check())
-                            {!! Form::open(['url' => '/comment', 'method' => 'post','class'=>'pt-4']) !!}
+                            {!! Form::open(['url' => '/comment', 'method' => 'post','class'=>'pt-4','@submit'=>'onSubmitForm']) !!}
                             @csrf
                             {!! Form::hidden('discussion_id',$discussion->id ) !!}
                             <div class="form-group">
-                                {!! Form::textarea('body',null, ['class' => 'form-control']) !!}
+                                {!! Form::textarea('body',null, ['class' => 'form-control','v-model'=>'newComment.body']) !!}
 
                             </div>
                             {!! Form::submit('发表评论', ['class' => 'btn btn-primary float-right']) !!}
