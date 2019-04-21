@@ -39,7 +39,6 @@ Vue.component('article-component', {
                     _token:this.initValue._token,
                     body:''
                 };
-                console.log(res.body);
             }, function () {
                 console.log('请求失败处理');
             });
