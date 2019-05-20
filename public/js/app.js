@@ -50607,7 +50607,7 @@ Vue.component('article-component', {
           _token: this.initValue._token,
           body: ''
         };
-        console.log(res.body);
+        console.log("I changed it");
       }, function () {
         console.log('请求失败处理');
       });
@@ -50715,9 +50715,9 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/code/forum/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /home/vagrant/code/forum/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /home/vagrant/code/forum/resources/sass/style.scss */"./resources/sass/style.scss");
+__webpack_require__(/*! /Users/lhb/Project/LaravelProject/forum/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/lhb/Project/LaravelProject/forum/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/lhb/Project/LaravelProject/forum/resources/sass/style.scss */"./resources/sass/style.scss");
 
 
 /***/ }),
